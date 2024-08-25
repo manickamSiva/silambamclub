@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    
+
+    <form action="" class="login">
+        <h1>LOGIN</h1>
+        <span class="form-input">
+            <input type="text" placeholder="username" id="username">
+        </span>
+        <span class="form-input">
+            <input type="password" placeholder="password" id="password">
+        </span>
+        <button type="submit" class="form-button" onclick="auth()">Log In</button>
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </form>
+    <script>
+        function auth(){
+            var username=document.getElementById('username').value;
+            var password=document.getElementById('password').value;
+            // condition 
+
+            if(username=="silambam" && password=="2024@silambam"){
+                window.location.assign('home.html');
+                alert("Login successfully");
+            }
+            else{
+                alert("invalid information");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
