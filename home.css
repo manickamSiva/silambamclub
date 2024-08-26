@@ -13,6 +13,7 @@
    align-items: center;
    justify-content: center;
    text-align: center;
+   padding: 20px;
 }
 
 .navbar {
@@ -24,6 +25,7 @@
    justify-content: space-between;
    position: absolute;
    top: 0;
+   flex-wrap: wrap;
 }
 
 .logo {
@@ -43,11 +45,15 @@
    text-decoration: none;
 }
 
-.navbar ul li {
+.navbar ul {
+   display: flex;
+   justify-content: flex-end;
    list-style: none;
-   display: inline-block;
-   margin: 0 20px;
-   position: relative;
+   flex-wrap: wrap;
+}
+
+.navbar ul li {
+   margin: 0 10px;
 }
 
 .navbar ul li a {
@@ -57,19 +63,10 @@
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.navbar ul li::after {
-   content: '';
-   height: 3px;
-   width: 0;
-   background: #eaf1f1;
-   position: absolute;
-   left: 0;
-   bottom: -10px;
-   transition: 0.5s;
-}
-
-.navbar ul li:hover::after {
-   width: 100%;
+h1 {
+   margin-bottom: 60px;
+   font-size: 2.5em;
+   text-transform: capitalize;
 }
 
 .quote-slider {
@@ -106,13 +103,6 @@
    margin-right: 20px;
 }
 
-h1 {
-   margin-bottom: 60px;
-   font-size: 2.5em;
-   text-transform: capitalize;
-}
-
-/* Footer Styles */
 .footer {
    background-color: #222;
    color: #fff;
@@ -138,7 +128,6 @@ h1 {
    color: #ffd700;
 }
 
-/* Slider Button Styles */
 .prev-btn, .next-btn {
    position: absolute;
    top: 50%;
@@ -162,4 +151,73 @@ h1 {
 
 .prev-btn:hover, .next-btn:hover {
    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+   .navbar ul li {
+       margin: 0 5px;
+   }
+
+   .navbar ul {
+       justify-content: center;
+       padding: 10px 0;
+   }
+
+   .quote-slider {
+       width: 90%;
+   }
+
+   .quote-slide p {
+       font-size: 1em;
+   }
+
+   .freedom_photo {
+       width: 150px;
+       height: 150px;
+   }
+
+   h1 {
+       font-size: 2em;
+   }
+
+   .footer-content h2 {
+       font-size: 1.5em;
+   }
+
+   .footer-content p {
+       font-size: 0.9em;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .navbar ul {
+       flex-direction: column;
+   }
+
+   .navbar ul li {
+       margin: 5px 0;
+   }
+
+   .quote-slide {
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+   }
+
+   .freedom_photo {
+       margin: 0 0 20px 0;
+   }
+
+   h1 {
+       font-size: 1.8em;
+   }
+
+   .footer-content h2 {
+       font-size: 1.2em;
+   }
+
+   .footer-content p {
+       font-size: 0.8em;
+   }
 }
