@@ -1,101 +1,149 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
- }
- 
- .banner {
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(235, 231, 15, 0.904);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
- }
- 
- .navbar {
-    background-color: rgba(250, 250, 105, 0.932);
-    width: 100%;
-    padding: 15px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
- }
- 
- .logo {
-    width: 65px;
-    height: 65px;
-    cursor: pointer;
-    border-radius: 50%;
- }
- 
- .logo_name {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: x-large;
-    color: red;
-    text-decoration: none;
- }
- 
- .navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
- }
- 
- .navbar ul li a {
-    text-decoration: none;
-    color: black;
-    text-transform: capitalize;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
- }
- 
- .navbar ul li::after {
-    content: '';
-    height: 3px;
-    width: 0;
-    background: #eaf1f1;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
- }
- 
- .navbar ul li:hover::after {
-    width: 100%;
- }
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
 
+.banner {
+   width: 100%;
+   height: 100vh;
+   background-color: rgba(235, 231, 15, 0.904);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   text-align: center;
+   padding-top: 100px; /* Add padding to account for the height of the navbar */
+}
 
-/* footer content*/
+.navbar {
+   background-color: rgba(250, 250, 105, 0.932);
+   width: 100%;
+   padding: 15px 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: fixed;
+   top: 0;
+   z-index: 1000; /* Ensure the navbar stays above other content */
+}
 
- .footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
- }
- 
- .footer-content h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
- }
- 
- .footer-content p {
-    font-size: 1em;
-    margin: 5px 0;
- }
- 
- .footer-content i {
-    margin-right: 10px;
-    color: #ffd700;
- }
+.logo {
+   width: 65px;
+   height: 65px;
+   cursor: pointer;
+   border-radius: 50%;
+}
+
+.logo_name {
+   display: flex;
+   align-items: center;
+   font-weight: bold;
+   font-family: sans-serif;
+   font-size: x-large;
+   color: red;
+   text-decoration: none;
+}
+
+.navbar ul {
+   display: flex;
+   list-style: none;
+}
+
+.navbar ul li {
+   margin: 0 20px;
+   position: relative;
+}
+
+.navbar ul li a {
+   text-decoration: none;
+   color: black;
+   text-transform: capitalize;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navbar ul li::after {
+   content: '';
+   height: 3px;
+   width: 0;
+   background: #eaf1f1;
+   position: absolute;
+   left: 0;
+   bottom: -10px;
+   transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+   width: 100%;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: left;
+}
+
+.content h2 {
+   font-size: 1.8em;
+   margin-bottom: 20px;
+   color: #333;
+}
+
+.content-wrapper {
+   display: flex; /* Use flexbox to place items side by side */
+   gap: 20px; /* Add space between the image and text */
+   max-width: 800px; /* Set a maximum width for the content wrapper */
+   margin: 0 auto; /* Center the content wrapper */
+   align-items: flex-start; /* Align items at the top */
+}
+
+.freedom_photo {
+   max-width: 300px;
+   height: auto;
+   border-radius: 10px;
+}
+
+.text-content {
+   max-width: 600px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.text-content p {
+   font-size: 1.2em;
+   line-height: 1.6;
+}
+
+.below-image {
+   max-width: 800px;
+   margin-top: 20px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 1.2em;
+   line-height: 1.6;
+}
+
+/* Footer content */
+.footer {
+   background-color: #222;
+   color: #fff;
+   padding: 20px 0;
+   text-align: center;
+   position: relative;
+   bottom: 0;
+   width: 100%;
+}
+
+.footer-content h2 {
+   font-size: 1.8em;
+   margin-bottom: 10px;
+}
+
+.footer-content p {
+   font-size: 1em;
+   margin: 5px 0;
+}
+
+.footer-content i {
+   margin-right: 10px;
+   color: #ffd700;
+}
