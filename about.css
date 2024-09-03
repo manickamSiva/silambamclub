@@ -11,21 +11,21 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: flex-start;
+   justify-content: center;
    text-align: center;
-   padding-top: 100px; /* Add padding to account for the height of the navbar */
+   padding-top: 100px; /* Adjust padding to account for navbar height */
 }
 
 .navbar {
    background-color: rgba(250, 250, 105, 0.932);
    width: 100%;
-   padding: 15px 0;
+   padding: 15px 20px;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   position: fixed;
+   position: fixed; /* Changed to fixed for better position handling */
    top: 0;
-   z-index: 1000; /* Ensure the navbar stays above other content */
+   z-index: 1000;
 }
 
 .logo {
@@ -39,7 +39,6 @@
    display: flex;
    align-items: center;
    font-weight: bold;
-   font-family: sans-serif;
    font-size: x-large;
    color: red;
    text-decoration: none;
@@ -82,6 +81,8 @@
    flex-direction: column;
    align-items: center;
    text-align: left;
+   max-width: 1200px; /* Added a max-width for better alignment */
+   margin: 0 auto; /* Center the content */
 }
 
 .content h2 {
@@ -91,11 +92,11 @@
 }
 
 .content-wrapper {
-   display: flex; /* Use flexbox to place items side by side */
-   gap: 20px; /* Add space between the image and text */
-   max-width: 800px; /* Set a maximum width for the content wrapper */
-   margin: 0 auto; /* Center the content wrapper */
-   align-items: flex-start; /* Align items at the top */
+   display: flex;
+   gap: 20px;
+   max-width: 100%;
+   margin: 0 auto;
+   align-items: flex-start;
 }
 
 .freedom_photo {
@@ -115,21 +116,20 @@
 }
 
 .below-image {
-   max-width: 800px;
+   max-width: 100%;
    margin-top: 20px;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    font-size: 1.2em;
    line-height: 1.6;
 }
 
-/* Footer content */
+/* Footer Styles */
 .footer {
    background-color: #222;
    color: #fff;
    padding: 20px 0;
    text-align: center;
    position: relative;
-   bottom: 0;
    width: 100%;
 }
 
@@ -146,48 +146,4 @@
 .footer-content i {
    margin-right: 10px;
    color: #ffd700;
-}
-
-.quote-slider {
-   position: relative;
-   overflow: hidden;
-   width: 100%;
-   height: 300px; /* Adjust height as needed */
-}
-
-.quote-track {
-   display: flex;
-   transition: transform 0.5s ease;
-}
-
-.quote-slide {
-   min-width: 100%;
-   box-sizing: border-box;
-   padding: 20px;
-   text-align: center;
-}
-
-.quote-slide img {
-   max-width: 100px; /* Adjust as needed */
-   margin-bottom: 10px;
-}
-
-.prev-btn, .next-btn {
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
-   background-color: rgba(0, 0, 0, 0.5);
-   color: white;
-   border: none;
-   padding: 10px;
-   cursor: pointer;
-   z-index: 1;
-}
-
-.prev-btn {
-   left: 10px;
-}
-
-.next-btn {
-   right: 10px;
 }
