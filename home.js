@@ -1,3 +1,4 @@
+// JavaScript for slider functionality
 const track = document.querySelector('.quote-track');
 const slides = Array.from(track.children);
 const nextButton = document.querySelector('.next-btn');
@@ -24,7 +25,7 @@ prevButton.addEventListener('click', () => {
     }
 });
 
-// Optional: Auto-slide functionality
+// Auto-slide functionality
 setInterval(() => {
     if (currentSlideIndex < slides.length - 1) {
         currentSlideIndex++;
