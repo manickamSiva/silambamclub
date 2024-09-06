@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="about.css">
-    <!-- Link to Font Awesome for icons -->
+    <title>Home Page with Carousel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
-    <div class="banner">
+    <header>
         <div class="navbar">
             <a href="#" class="logo_name">
                 <img src="logo.jpeg" alt="Logo" class="logo">Nethaji Silambam
@@ -20,20 +19,31 @@
                 <li><a href="competitions.html">Competitions</a></li>
             </ul>
         </div>
+    </header>
     
+    <main>
         <div class="content">
             <h2>Journey of the Nethaji Silambam</h2>
             <div class="content-wrapper">
-                <img src="thatha.jpeg" alt="Master Jagadeshan" class="freedom_photo"> <!-- Add thatha photo -->
+                <img src="thatha.jpeg" alt="Master Jagadeshan" class="freedom_photo" width="300" height="200">
                 <div class="text-content">
-                    <p>This is our Master Jagadeshan who introduced the Nethaji Silambam School in Chennai near Canal Bank Road Government School. He has been teaching Silambam to students for the past 5 years, including those from the government school.</p>
+                    <p>This is our Master Jagadeshan who introduced the Nethaji Silambam School in Chennai near Canal Bank Road Government School. He has been teaching Silambam to students for the past 5 years.</p>
                 </div>
             </div>
             <p class="below-image">Through this Academy, many students have participated in district, state, national, and even international competitions.</p>
+            
+            <!-- Carousel Slider Section -->
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel">
+                    <img src="ground_1.jpeg" alt="School Ground 1" class="carousel-slide">
+                    <img src="ground_2.jpeg" alt="School Ground 2" class="carousel-slide">
+                </div>
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-content">
             <h2>Nethaji Silambam Academy</h2>
@@ -43,6 +53,37 @@
         </div>
     </footer>
 
-    <script src="about.js"></script>
+    <!-- JavaScript for Carousel Slider -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slideIndex++;
+            if (slideIndex >= totalSlides) {
+                slideIndex = 0; 
+            }
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const carousel = document.querySelector('.carousel');
+            const translateValue = -slideIndex * 100;
+            carousel.style.transform = `translateX(${translateValue}%)`;
+        }
+
+        setInterval(showNextSlide, 3000); // Auto-slide every 3 seconds
+
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            slideIndex--;
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - 1; 
+            }
+            updateCarousel();
+        });
+
+        document.querySelector('.next-btn').addEventListener('click', showNextSlide);
+    </script>
 </body>
 </html>
